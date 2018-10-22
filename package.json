@@ -18,5 +18,6 @@
   },
   "dependencies": {
     "inquirer": "~6.2.0"
-  }
+  },
+  "keywords": ["daily coding problem"]
 }
