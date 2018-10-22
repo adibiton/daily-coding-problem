@@ -6,6 +6,7 @@
   "author": "Adi Biton <adi.biton@gmail.com>",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest ./src/*.test.js --watch",
     "lint": "eslint src/*",
     "generator": "node ./scripts/gen-new-template.js"
   },

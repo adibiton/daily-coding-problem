@@ -19,33 +19,12 @@ export const rgbArray = (input) => {
 
     if(currentIndex === length)
         return input
-    let runnerIndex = currentIndex + 1
 
-    while(runnerIndex < length){
-        if(input[runnerIndex] === 'R'){
-            swap(input, runnerIndex, currentIndex)
-            currentIndex++
-        }
-        runnerIndex++
-    }
+    currentIndex = swapChar(input, length, 'R', currentIndex)
 
-    runnerIndex = currentIndex
-    while(runnerIndex < length){
-        if(input[runnerIndex] === 'G'){
-            swap(input, runnerIndex, currentIndex)
-            currentIndex++
-        }
-        runnerIndex++
-    }
+    currentIndex = swapChar(input, length, 'G', currentIndex)
 
-    runnerIndex = currentIndex
-    while(runnerIndex < length){
-        if(input[runnerIndex] === 'B'){
-            swap(input, runnerIndex, currentIndex)
-            currentIndex++
-        }
-        runnerIndex++
-    }
+    swapChar(input, length, 'B', currentIndex)
     return input
 }
 
@@ -53,6 +32,18 @@ const swap = (arr, a, b) => {
     const temp = arr[a]
     arr[a] = arr[b]
     arr[b] = temp
+}
+
+const swapChar = (arr, length, char, currentIndex) => {
+    let runnerIndex = currentIndex
+    while(runnerIndex < length){
+        if(arr[runnerIndex] === char){
+            swap(arr, runnerIndex, currentIndex)
+            currentIndex++
+        }
+        runnerIndex++
+    }
+    return currentIndex
 }
 const containsRGB = (arr) => {
     return arr.every(char => char === 'R' || char === 'G' || char === 'B')
